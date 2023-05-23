@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<!-- Imported stylesheet -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BMI Calculator</title>
+</head>
+<body>
+
+	<div class="welcome_div">
+		<h2> Let's Calculate Your BMI </h2>
+	<div>
+
+	<br>
+
+	<!-- Take input of Weight in kg, Height in cm -->
+	<div class="input_div">
+
+		<form class="pure-form", method="POST", action="\">
+			
+			<!-- Take name input -->
+			Name<br>
+			<input type="text" name="username">
+			<br>
+			<!-- Take height input in cm -->
+			Height (in centimeter):<br>
+			<input type="number" name="user_height">
+			<br>
+			<!-- Take weight input in kg -->
+			Weight (in Kilogram):<br> 
+			<input type="number" name="user_weight">
+			<br>
+			<br>
+			<!-- Submit Button -->
+			<button class="pure-button-primary" type="submit" value="Submit">Calculate BMI</button>
+
+		</form>
+
+	</div>
+	<br> <br>
+	<!-- Display the Calcualte Output -->
+	<div class="output_div">
+		
+		{% if name %}
+			<h4> Greetings {{ name }}! </h4>
+			<h4> With given height = {{ height }} cm. and weight = {{ weight }} kg </h4>
+			<h4> Your calculated Body Mass Index is <strong>{{ bmi }}</strong> </h4>
+			<h4> Which is the category <b> {{ bmi_category }} </b>.</h4>
+			<p><i>Thank you for using our system to calculate your BMI, best wishes for your healthy life.</i></p>
+		{% endif %}
+
+	</div>
+
+</body>
+</html>
