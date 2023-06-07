@@ -34,6 +34,7 @@ def bmi():
 # User formatted game
 def formatted_user_name(name):
 	good_name = f"{name.title()}"
+	
 	return good_name
 
 # User bmi calculation by height and weight
